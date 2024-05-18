@@ -30,6 +30,6 @@ var_dump($result);
 $result = $gestorBD->lanzarQuery(sql:$sql_update,numRows:true,tipo:"actualizar");
 var_dump($result);
 
-$result = $gestorBD->lanzarQuery(sql:$sql_delete,numRows:true,tipo:"actualizar");
+$result = $gestorBD->lanzarQuery(sql:$sql_delete,numRows:true,tipo:"eliminar");
 var_dump($result);
 ?>
