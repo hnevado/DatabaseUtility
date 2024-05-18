@@ -90,6 +90,10 @@ class DatabaseUtility {
        
     }
 
+    public function disconnect() {
+        $this->mysqli->close();
+    }
+    
     private function logError(string $message) : void
     { 
         //https://www.php.net/manual/es/function.error-log.php

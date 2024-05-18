@@ -32,4 +32,6 @@ var_dump($result);
 
 $result = $gestorBD->lanzarQuery(sql:$sql_delete,numRows:true,tipo:"eliminar");
 var_dump($result);
+
+$gestorBD->disconnect()
 ?>
