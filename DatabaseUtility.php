@@ -8,7 +8,7 @@ class DatabaseUtility {
         private string $host = 'localhost',
         private string $db = 'database',
         private string $user = 'root',
-        private string $password = 'password',  
+        private string $password = 'password',
     ) 
     {
         $this->connect($this->host, $this->user, $this->password, $this->db);
@@ -25,16 +25,44 @@ class DatabaseUtility {
         }
     }    
 
-    public function query(string $sql, bool $lastId = false, bool $numRows = false) : bool | array {
+    public function lanzarQuery(string $sql, bool $lastId = false, bool $numRows = false) : bool | array {
         //Devolveremos un true o false si la sql se ejecutó correctamente
         //Si nos pide lastId y/o numRows, un array
 
-        return [];
+        $array = [];
+
+        for ($i = 0; $i < $this->retryCount; $i++) {
+            if ($result = $this->mysqli->query($sql)) {
+                
+                if (!$lastId && !$numRows)
+                 return true;
+                
+                $array[] = true;
+                
+                if ($lastId)
+                 $array[]=$this->mysqli->insert_id;
+                
+                if ($numRows)
+                 $array[] = $result->num_rows;
+
+                $result->free();
+
+                return $array;
+
+            } else {
+                $this->logError("Error en query en el intento: ".($i+1)." - ". $this->mysqli->error);
+                if ($i == $this->retryCount - 1) {
+                    return false;
+                }
+            }
+        }
+       
     }
 
     private function logError(string $message) : void
     { 
-        //TODO - usar error_log()
+        //https://www.php.net/manual/es/function.error-log.php
+        error_log($message, 3, 'db_errors.log');
     }
 
 
