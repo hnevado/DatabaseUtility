@@ -13,7 +13,7 @@ $gestorBD = new DatabaseUtility($host,$db,$dbUser,$password);
 
 //Querys para testing
 
-$sql_select="SELECT * FROM users";
+$sql_select="SELECT * FROM usfers";
 
 //Fin Querys para testing
 

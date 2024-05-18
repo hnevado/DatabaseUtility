@@ -30,8 +30,10 @@ class DatabaseUtility {
         //Si nos numRows, un array
 
         $array = [];
-
+        
         for ($i = 0; $i < $this->retryCount; $i++) {
+         try   
+         { 
             if ($result = $this->mysqli->query($sql)) {
                 
                 if (!$numRows)
@@ -47,11 +49,16 @@ class DatabaseUtility {
                 return $array;
 
             } else {
-                $this->logError("Error en query en el intento: ".($i+1)." - ". $this->mysqli->error);
+
                 if ($i == $this->retryCount - 1) {
                     return false;
                 }
             }
+         } catch (Exception $e) {
+            $this->logError("Error en query intento ".($i+1)." - ".$e->getMessage());
+            if ($i == $this->retryCount - 1)
+              $this->logError("Error en query: se agotaron todos los intentos de ejecución sin éxito para la query ".$sql);
+         }
         }
        
     }
@@ -69,8 +76,9 @@ class DatabaseUtility {
 
     private function logError(string $message) : void
     { 
+        echo "log";
         //https://www.php.net/manual/es/function.error-log.php
-        error_log($message, 3, 'db_errors.log');
+        error_log($message."\n", 3, 'db_errors.log');
     }
 
 

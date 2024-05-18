@@ -1,0 +1,4 @@
+Error en query intento 1 - Table 'laravel10_livewire.usfers' doesn't exist
+Error en query intento 2 - Table 'laravel10_livewire.usfers' doesn't exist
+Error en query intento 3 - Table 'laravel10_livewire.usfers' doesn't exist
+Error en query: se agotaron todos los intentos de ejecución sin éxito para la query SELECT * FROM usfers
