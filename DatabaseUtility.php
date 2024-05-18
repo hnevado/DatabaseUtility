@@ -72,7 +72,6 @@ class DatabaseUtility {
 
     private function logError(string $message) : void
     { 
-        echo "log";
         //https://www.php.net/manual/es/function.error-log.php
         error_log($message."\n", 3, 'db_errors.log');
     }
