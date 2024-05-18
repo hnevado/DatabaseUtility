@@ -38,12 +38,21 @@ class DatabaseUtility {
             if ($result = $this->mysqli->query($sql)) {
                 
                 if (!$numRows)
-                 return true;
-
-                $array[] = true;
-                
-                if ($numRows)
                 {
+
+                  if ($tipo === "consultar")
+                    return $result->fetch_all(MYSQLI_ASSOC);
+                 
+                  return true;
+
+                }
+                else
+                {
+                    if ($tipo === "consultar")
+                      $array[] = $result->fetch_all(MYSQLI_ASSOC);
+                    else
+                      $array[] = true;
+
                     if ($tipo === "consultar")
                       $array[] = $result->num_rows;
                     else 
@@ -60,10 +69,14 @@ class DatabaseUtility {
                     return false;
                 }
             }
+
          } catch (Exception $e) {
+
             $this->logError("Error en query intento ".($i+1)." - ".$e->getMessage());
+            
             if ($i == $this->retryCount - 1)
               $this->logError("Error en query: se agotaron todos los intentos de ejecución sin éxito para la query ".$sql);
+
          }
 
         }

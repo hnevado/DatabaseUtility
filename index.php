@@ -18,7 +18,7 @@ $sql_select="SELECT * FROM users";
 //Fin Querys para testing
 
 //Llamando a los métodos de la clase DataBaseUtility
-$result = $gestorBD->lanzarQuery(sql:$sql_select,numRows:false);
+$result = $gestorBD->lanzarQuery(sql:$sql_select,numRows:true);
 var_dump($result);
 
 
