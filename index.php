@@ -18,7 +18,7 @@ $sql_select="SELECT * FROM usfers";
 //Fin Querys para testing
 
 //Llamando a los métodos de la clase DataBaseUtility
-$result = $gestorBD->lanzarQuery($sql_select,false);
+$result = $gestorBD->lanzarQuery(sql:$sql_select,numRows:false);
 var_dump($result);
 
 

@@ -25,13 +25,14 @@ class DatabaseUtility {
         }
     }    
 
-    public function lanzarQuery(string $sql, bool $numRows = false) : bool | array {
+    public function lanzarQuery(string $tipo="consultar", string $sql, bool $numRows = false) : bool | array {
         //Devolveremos un true o false si la sql se ejecutó correctamente
-        //Si nos numRows, un array
+        //Si nos manda numRows a true, un array con el número de registros o registros afectados, según el tipo de consulta
 
         $array = [];
         
         for ($i = 0; $i < $this->retryCount; $i++) {
+
          try   
          { 
             if ($result = $this->mysqli->query($sql)) {
@@ -42,7 +43,12 @@ class DatabaseUtility {
                 $array[] = true;
                 
                 if ($numRows)
-                 $array[] = $result->num_rows;
+                {
+                    if ($tipo === "consultar")
+                      $array[] = $result->num_rows;
+                    else 
+                      $array[] = $this->mysqli->affected_rows;
+                }
 
                 $result->free();
 
@@ -59,19 +65,9 @@ class DatabaseUtility {
             if ($i == $this->retryCount - 1)
               $this->logError("Error en query: se agotaron todos los intentos de ejecución sin éxito para la query ".$sql);
          }
+
         }
        
-    }
-
-    public function insertarQuery() : bool | array {
-        //función dummy - TODO
-        return true;
-    }
-
-    public function eliminarQuery() : bool | array {
-        //función dummy - TODO
-        return true;
-
     }
 
     private function logError(string $message) : void
