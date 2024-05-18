@@ -25,7 +25,7 @@ class DatabaseUtility {
         }
     }    
 
-    public function lanzarQuery(string $tipo="consultar", string $sql, bool $numRows = false) : bool | array {
+    public function lanzarQuery(string $sql, bool $numRows = false, string $tipo="consultar") : bool | array {
         //Devolveremos un true o false si la sql se ejecutó correctamente
         //Si nos manda numRows a true, un array con el número de registros o registros afectados, según el tipo de consulta
 
