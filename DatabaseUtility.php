@@ -26,17 +26,21 @@ class DatabaseUtility {
     }    
 
     public function lanzarQuery(string $sql, bool $numRows = false, string $tipo="consultar") : bool | array {
-        //Devolveremos un true o false si la sql se ejecutó correctamente
-        //Si nos manda numRows a true, un array con el número de registros o registros afectados, según el tipo de consulta
+     
+        $tiposConsulta=['consultar','actualizar','eliminar','insertar'];
 
-        $array = [];
+        if (!in_array($tipo,$tiposConsulta))
+        {
+            $this->logError("El tipo de consulta que se ha especificado en lanzarQuery no es valido: ".$tipo);
+            return false;
+        }
         
         for ($i = 0; $i < $this->retryCount; $i++) {
-
+            
          try   
          { 
             if ($result = $this->mysqli->query($sql)) {
-                
+             
                 if (!$numRows)
                 {
 
@@ -49,17 +53,18 @@ class DatabaseUtility {
                 else
                 {
                     if ($tipo === "consultar")
+                    {
                       $array[] = $result->fetch_all(MYSQLI_ASSOC);
-                    else
-                      $array[] = true;
-
-                    if ($tipo === "consultar")
                       $array[] = $result->num_rows;
-                    else 
+                      $result->free();
+                    }
+                    else
+                    {
+                      $array[] = true;
                       $array[] = $this->mysqli->affected_rows;
+                    }
+  
                 }
-
-                $result->free();
 
                 return $array;
 
@@ -75,8 +80,10 @@ class DatabaseUtility {
             $this->logError("Error en query intento ".($i+1)." - ".$e->getMessage());
             
             if ($i == $this->retryCount - 1)
+            {
               $this->logError("Error en query: se agotaron todos los intentos de ejecución sin éxito para la query ".$sql);
-
+              return false;
+            }
          }
 
         }

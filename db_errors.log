@@ -2,3 +2,44 @@ Error en query intento 1 - Table 'laravel10_livewire.usfers' doesn't exist
 Error en query intento 2 - Table 'laravel10_livewire.usfers' doesn't exist
 Error en query intento 3 - Table 'laravel10_livewire.usfers' doesn't exist
 Error en query: se agotaron todos los intentos de ejecución sin éxito para la query SELECT * FROM usfers
+El tipo de consulta que se ha especificado en lanzarQuery no es valido: fdfdf
+Error en query intento 1 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''name','email','password') VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpk' at line 1
+Error en query intento 2 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''name','email','password') VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpk' at line 1
+Error en query intento 3 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''name','email','password') VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpk' at line 1
+Error en query: se agotaron todos los intentos de ejecución sin éxito para la query INSERT users('name','email','password') VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi')
+Error en query intento 1 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 2 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 3 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query: se agotaron todos los intentos de ejecución sin éxito para la query INSERT users(name,email,password) VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi')
+Error en query intento 1 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 2 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 3 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query: se agotaron todos los intentos de ejecución sin éxito para la query INSERT users(name,email,password) VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi')
+Error en query intento 1 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 2 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 3 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query: se agotaron todos los intentos de ejecución sin éxito para la query INSERT users(name,email,password) VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi')
+Error en query intento 1 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 2 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 3 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query: se agotaron todos los intentos de ejecución sin éxito para la query INSERT users(name,email,password) VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi')
+Error en query intento 1 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 2 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 3 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query: se agotaron todos los intentos de ejecución sin éxito para la query INSERT users(name,email,password) VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi')
+Error en query intento 1 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 2 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 3 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query: se agotaron todos los intentos de ejecución sin éxito para la query INSERT users(name,email,password) VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi')
+Error en query intento 1 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 2 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 3 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query: se agotaron todos los intentos de ejecución sin éxito para la query INSERT users(name,email,password) VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi')
+Error en query intento 1 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 2 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 3 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query: se agotaron todos los intentos de ejecución sin éxito para la query INSERT users(name,email,password) VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi')
+Error en query intento 1 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 2 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query intento 3 - Duplicate entry 'testing@gmail.com' for key 'users_email_unique'
+Error en query: se agotaron todos los intentos de ejecución sin éxito para la query INSERT users(name,email,password) VALUES('Testing','testing@gmail.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi')
